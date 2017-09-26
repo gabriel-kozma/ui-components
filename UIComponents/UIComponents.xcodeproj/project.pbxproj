@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33758F811CB3648D00998EDD /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 33758F7D1CB3648D00998EDD /* UIComponents.h */; };
+		33758F811CB3648D00998EDD /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 33758F7D1CB3648D00998EDD /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		33758F821CB3648D00998EDD /* ViewWithStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33758F801CB3648D00998EDD /* ViewWithStroke.swift */; };
 		33758F841CB364A900998EDD /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33758F831CB364A900998EDD /* StarView.swift */; };
 		33CCFB2A1CAC2139005A12B8 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CCFB1F1CAC2139005A12B8 /* UIComponents.framework */; };
-		33CCFB3F1CAC21AE005A12B8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33CCFB3A1CAC21AE005A12B8 /* Info.plist */; };
-		33CCFB441CAC21B4005A12B8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33CCFB421CAC21B4005A12B8 /* Info.plist */; };
-		33CCFB451CAC21B4005A12B8 /* UIComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CCFB431CAC21B4005A12B8 /* UIComponentsTests.swift */; };
+		AAFF6D171F7AC29900F7A1EB /* UIComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CCFB431CAC21B4005A12B8 /* UIComponentsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,10 +197,12 @@
 					33CCFB1E1CAC2139005A12B8 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = FU7J9F5JA8;
+						LastSwiftMigration = 0830;
 					};
 					33CCFB281CAC2139005A12B8 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = FU7J9F5JA8;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -229,8 +229,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33CCFB441CAC21B4005A12B8 /* Info.plist in Resources */,
-				33CCFB3F1CAC21AE005A12B8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +248,6 @@
 			files = (
 				33758F841CB364A900998EDD /* StarView.swift in Sources */,
 				33758F821CB3648D00998EDD /* ViewWithStroke.swift in Sources */,
-				33CCFB451CAC21B4005A12B8 /* UIComponentsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAFF6D171F7AC29900F7A1EB /* UIComponentsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gabrielmackoz.UIComponents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -392,6 +391,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gabrielmackoz.UIComponents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -402,6 +402,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gabrielmackoz.UIComponentsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -412,6 +413,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gabrielmackoz.UIComponentsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -27,14 +27,14 @@ import UIKit
 //**********************************************************************************************************
 
 @IBDesignable
-public class StarView : UIView {
+open class StarView : UIView {
 
 //**************************************************
 // MARK: - Properties
 //**************************************************
 
     @IBInspectable var halfStar: Bool = false
-    @IBInspectable var fillColor: UIColor = UIColor.grayColor()
+    @IBInspectable var fillColor: UIColor = UIColor.gray
     
 //**************************************************
 // MARK: - Constructors
@@ -44,54 +44,54 @@ public class StarView : UIView {
 // MARK: - Private Methods
 //**************************************************
 
-    private func drawFullStar(rect: CGRect) {
+    fileprivate func drawFullStar(_ rect: CGRect) {
         let starPath = UIBezierPath()
-        starPath.moveToPoint(CGPoint(x: rect.width * 0.5, y: 0))
-        starPath.addLineToPoint(CGPoint(x: rect.width * 0.65, y: rect.height * 0.29))
-        starPath.addLineToPoint(CGPoint(x: rect.width * 0.97, y: rect.height * 0.38))
-        starPath.addLineToPoint(CGPoint(x: rect.width * 0.78, y: rect.height * 0.64))
-        starPath.addLineToPoint(CGPoint(x: rect.width * 0.8, y: rect.height))
-        starPath.addLineToPoint(CGPoint(x: rect.width * 0.5, y: rect.height * 0.9))
-        starPath.addLineToPoint(CGPoint(x: rect.width * 0.2, y: rect.height))
-        starPath.addLineToPoint(CGPoint(x: rect.width * 0.22, y: rect.height * 0.64))
-        starPath.addLineToPoint(CGPoint(x: rect.width * 0.002, y: rect.height * 0.38))
-        starPath.addLineToPoint(CGPoint(x: rect.width * 0.32, y: rect.height * 0.29))
-        starPath.closePath()
+        starPath.move(to: CGPoint(x: rect.width * 0.5, y: 0))
+        starPath.addLine(to: CGPoint(x: rect.width * 0.65, y: rect.height * 0.29))
+        starPath.addLine(to: CGPoint(x: rect.width * 0.97, y: rect.height * 0.38))
+        starPath.addLine(to: CGPoint(x: rect.width * 0.78, y: rect.height * 0.64))
+        starPath.addLine(to: CGPoint(x: rect.width * 0.8, y: rect.height))
+        starPath.addLine(to: CGPoint(x: rect.width * 0.5, y: rect.height * 0.9))
+        starPath.addLine(to: CGPoint(x: rect.width * 0.2, y: rect.height))
+        starPath.addLine(to: CGPoint(x: rect.width * 0.22, y: rect.height * 0.64))
+        starPath.addLine(to: CGPoint(x: rect.width * 0.002, y: rect.height * 0.38))
+        starPath.addLine(to: CGPoint(x: rect.width * 0.32, y: rect.height * 0.29))
+        starPath.close()
         fillColor.setFill()
         starPath.fill()
     }
     
-    private func drawHalfStar(rect: CGRect) {
+    fileprivate func drawHalfStar(_ rect: CGRect) {
         let starPath = UIBezierPath()
         let widthForMath = rect.width/2
-        starPath.moveToPoint(CGPoint(x: widthForMath * 0.64, y: rect.height * 0.26))
+        starPath.move(to: CGPoint(x: widthForMath * 0.64, y: rect.height * 0.26))
         
-        starPath.addCurveToPoint(CGPoint(x: 0, y: rect.height * 0.36),
+        starPath.addCurve(to: CGPoint(x: 0, y: rect.height * 0.36),
                                  controlPoint1: CGPoint(x: widthForMath * 0.64, y: rect.height * 0.27),
                                  controlPoint2: CGPoint(x: widthForMath * 0.07, y: rect.height * 0.35))
         
-        starPath.addLineToPoint(CGPoint(x: 0, y: rect.height * 0.37))
+        starPath.addLine(to: CGPoint(x: 0, y: rect.height * 0.37))
         
-        starPath.addCurveToPoint(CGPoint(x: widthForMath * 0.40, y: rect.height * 0.64),
+        starPath.addCurve(to: CGPoint(x: widthForMath * 0.40, y: rect.height * 0.64),
                                  controlPoint1: CGPoint(x: widthForMath * 0.06, y: rect.height * 0.41),
                                  controlPoint2: CGPoint(x: widthForMath * 0.40, y: rect.height * 0.64))
         
-        starPath.addLineToPoint(CGPoint(x: widthForMath * 0.38, y: rect.height))
+        starPath.addLine(to: CGPoint(x: widthForMath * 0.38, y: rect.height))
         
-        starPath.addCurveToPoint(CGPoint(x: widthForMath, y: rect.height * 0.88),
+        starPath.addCurve(to: CGPoint(x: widthForMath, y: rect.height * 0.88),
                                  controlPoint1: CGPoint(x: widthForMath * 0.38, y: rect.height),
                                  controlPoint2: CGPoint(x: widthForMath * 0.87, y: rect.height * 0.91))
         
-        starPath.addCurveToPoint(CGPoint(x: widthForMath, y: 0),
+        starPath.addCurve(to: CGPoint(x: widthForMath, y: 0),
                                  controlPoint1: CGPoint(x: widthForMath, y: rect.height * 0.64),
                                  controlPoint2: CGPoint(x: widthForMath, y: rect.height * 011))
         
-        starPath.addCurveToPoint(CGPoint(x: widthForMath * 0.64, y: rect.height * 0.26),
+        starPath.addCurve(to: CGPoint(x: widthForMath * 0.64, y: rect.height * 0.26),
                                  controlPoint1: CGPoint(x: widthForMath * 0.9, y: rect.height * 0.069),
                                  controlPoint2: CGPoint(x: widthForMath * 0.64, y: rect.height * 0.26))
         
-        starPath.addLineToPoint(CGPoint(x: widthForMath * 0.65, y: rect.height * 0.25))
-        starPath.closePath()
+        starPath.addLine(to: CGPoint(x: widthForMath * 0.65, y: rect.height * 0.25))
+        starPath.close()
         fillColor.setFill()
         starPath.fill()
     }
@@ -104,7 +104,7 @@ public class StarView : UIView {
 // MARK: - Override Public Methods
 //**************************************************
 
-    public override func drawRect(rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         if halfStar {
             self.drawHalfStar(rect)
         } else {

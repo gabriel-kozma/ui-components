@@ -27,14 +27,14 @@ import UIKit
 //**********************************************************************************************************
 
 @IBDesignable
-public class ViewWithStroke : UIView {
+open class ViewWithStroke : UIView {
 
 //**************************************************
 // MARK: - Properties
 //**************************************************
     
     @IBInspectable var lineWidth: CGFloat = 1
-    @IBInspectable var lineColor: UIColor = UIColor.grayColor()
+    @IBInspectable var lineColor: UIColor = UIColor.gray
     @IBInspectable var showTopLine: Bool = true
     @IBInspectable var showBottomLine: Bool = true
     @IBInspectable var showLeftLine: Bool = true
@@ -48,37 +48,37 @@ public class ViewWithStroke : UIView {
 // MARK: - Private Methods
 //**************************************************
     
-    private func drawTopLine(rect: CGRect) {
+    fileprivate func drawTopLine(_ rect: CGRect) {
         let line = UIBezierPath()
-        line.moveToPoint(CGPointMake(rect.origin.x, rect.origin.y))
-        line.addLineToPoint(CGPointMake(rect.width, rect.origin.y))
+        line.move(to: CGPoint(x: rect.origin.x, y: rect.origin.y))
+        line.addLine(to: CGPoint(x: rect.width, y: rect.origin.y))
         self.lineColor.setStroke()
         line.lineWidth = self.lineWidth
         line.stroke()
     }
     
-    private func drawBottomLine(rect: CGRect) {
+    fileprivate func drawBottomLine(_ rect: CGRect) {
         let line = UIBezierPath()
-        line.moveToPoint(CGPointMake(rect.origin.x, rect.height))
-        line.addLineToPoint(CGPointMake(rect.width, rect.height))
+        line.move(to: CGPoint(x: rect.origin.x, y: rect.height))
+        line.addLine(to: CGPoint(x: rect.width, y: rect.height))
         self.lineColor.setStroke()
         line.lineWidth = self.lineWidth
         line.stroke()
     }
     
-    private func drawLeftLine(rect: CGRect) {
+    fileprivate func drawLeftLine(_ rect: CGRect) {
         let line = UIBezierPath()
-        line.moveToPoint(CGPointMake(rect.origin.x, rect.origin.y))
-        line.addLineToPoint(CGPointMake(rect.origin.x, rect.height))
+        line.move(to: CGPoint(x: rect.origin.x, y: rect.origin.y))
+        line.addLine(to: CGPoint(x: rect.origin.x, y: rect.height))
         self.lineColor.setStroke()
         line.lineWidth = self.lineWidth
         line.stroke()
     }
     
-    private func drawRightLine(rect: CGRect) {
+    fileprivate func drawRightLine(_ rect: CGRect) {
         let line = UIBezierPath()
-        line.moveToPoint(CGPointMake(rect.width, rect.origin.y))
-        line.addLineToPoint(CGPointMake(rect.width, rect.height))
+        line.move(to: CGPoint(x: rect.width, y: rect.origin.y))
+        line.addLine(to: CGPoint(x: rect.width, y: rect.height))
         self.lineColor.setStroke()
         line.lineWidth = self.lineWidth
         line.stroke()
@@ -92,7 +92,7 @@ public class ViewWithStroke : UIView {
 // MARK: - Override Public Methods
 //**************************************************
     
-    public override func drawRect(rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         if self.showTopLine {
             self.drawTopLine(rect)
         }
